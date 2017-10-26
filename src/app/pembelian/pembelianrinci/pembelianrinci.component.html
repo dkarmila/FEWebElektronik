@@ -1,0 +1,60 @@
+<div class="col-md-11">
+  <!-- Horizontal Form -->
+  <div class="box box-info">
+      <div class="box-header with-border">
+      <h3 class="box-title">Detail Pembelian</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form class="form-horizontal">
+      <div class="box-body">
+          <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Kode Pembelian</label>
+
+          <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" value="{{dataDetail.KdPembelian}}" >
+          </div>
+          </div>
+          <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Kode Petugas</label>
+
+          <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.KdPetugas}}">
+          </div>
+          </div>
+          <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Tanggal Pembelian</label>
+          
+          <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.TglPembelian}}">
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Jumlah Item</label>
+            
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.JmlItem}}">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Total Harga Beli</label>
+            
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputPassword3" value="{{dataDetail.TotalHargaBeli}}">
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Status Pembayaran</label>
+            
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputPassword3" value="{{dataDetail.StatusPembayaran}}">
+            </div>
+            </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+          <button class="btn btn-info" type="submit" (click)="barangBack()">Back</button>
+      </div>
+      <!-- /.box-footer -->
+      </form>
+  </div>

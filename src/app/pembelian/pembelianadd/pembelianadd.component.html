@@ -1,0 +1,57 @@
+<!-- /.box -->
+<!-- general form elements disabled -->
+<div class="col-xs-11">
+  <div class="box box-warning">
+<div class="box-header with-border">
+  <h3 class="box-title">Add Barang</h3>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <form role="form" (ngSubmit)="postBarang(dataAdd)">
+  <!-- text input -->
+  <div class="form-group">
+      <label>Kode Barang</label>
+      <input [(ngModel)]="dataAdd.KdBarang" name="kodeBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Kode Kategori Barang</label>
+      <input [(ngModel)]="dataAdd.KdKategoriBarang" name="katBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Kode Merk Barang</label>
+    <input [(ngModel)]="dataAdd.KdMerkBarang" name="merkBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Tipe Barang</label>
+    <input [(ngModel)]="dataAdd.TipeBarang" name="tipeBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Harga Barang</label>
+    <input [(ngModel)]="dataAdd.HargaBarang" name="hargaBarang" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Stok Barang Awal</label>
+    <input [(ngModel)]="dataAdd.StokAwal" name="stokAwal" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Stok Barang Akhir</label>
+    <input [(ngModel)]="dataAdd.StokAkhir" name="stokAkhir" type="number" class="form-control">
+  </div>
+  <div class="box-footer">
+      <button type="submit" class="btn btn-default" (click)="barangBack()">Cancel</button>
+      <button type="submit" class="btn btn-info pull-right">Add</button>       
+  </div>        
+</form>
+</div>
+<!-- /.box-body -->
+</div>
+</div>
+<script>
+$(function () {
+    //Initialize Select2 Elements
+  $(".select2").select2();
+  $('#datepicker').datepicker({
+      autoclose: true
+  });
+});
+</script>

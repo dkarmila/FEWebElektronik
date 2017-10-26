@@ -1,0 +1,58 @@
+
+<!-- /.box -->
+<!-- general form elements disabled -->
+<div class="col-xs-11">
+  <div class="box box-warning">
+<div class="box-header with-border">
+  <h3 class="box-title">Update Barang</h3>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <form role="form">
+  <!-- text input -->
+  <div class="form-group">
+      <label>Kode Barang</label>
+      <input [(ngModel)]="dataEdit.KdBarang" name="kodeBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Kode Kategori Barang</label>
+      <input [(ngModel)]="dataEdit.KdKategoriBarang" name="katBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Kode Merk Barang</label>
+    <input [(ngModel)]="dataEdit.KdMerkBarang" name="merkBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Tipe Barang</label>
+    <input [(ngModel)]="dataEdit.TypeBarang" name="tipebarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Harga Barang</label>
+    <input [(ngModel)]="dataEdit.HargaBarang" name="hargabarang" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Stok Barang Awal</label>
+    <input [(ngModel)]="dataEdit.StokAwal" name="stokawal" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Stok Barang Akhir</label>
+    <input [(ngModel)]="dataEdit.StokAkhir" name="stokakhir" type="number" class="form-control">
+  </div>
+  <div class="box-footer">
+          <button type="submit" class="btn btn-default" (click)="barangBack()">Cancel</button>
+          <button type="submit" class="btn btn-info pull-right" (click)="putBarang(dataEdit._id)">Update</button>        
+  </div>        
+</form>
+</div>
+<!-- /.box-body -->
+</div>
+</div>
+<script>
+$(function () {
+    //Initialize Select2 Elements
+  $(".select2").select2();
+  $('#datepicker').datepicker({
+      autoclose: true
+  });
+});
+</script>
