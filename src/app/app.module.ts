@@ -25,7 +25,8 @@ let routes: Routes=[
   {path: 'barang/detail/:id', component: BarangdetailComponent},
   {path: 'barang/edit/:id', component: BarangeditComponent},
   {path: 'barang/add', component:BarangaddComponent},
-  {path: 'kategoribarang', component: KategoribarangComponent}
+  {path: 'kategoribarang', component: KategoribarangComponent},
+  {path: 'pembelian', component: PembelianComponent}
 ] 
 
 @NgModule({

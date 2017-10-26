@@ -14,16 +14,22 @@
       <input [(ngModel)]="dataAdd.KdBarang" name="kodeBarang" type="text" class="form-control">
   </div>
   <div class="form-group">
-      <label>Kode Kategori Barang</label>
-      <input [(ngModel)]="dataAdd.KdKategoriBarang" name="katBarang" type="text" class="form-control">
+      <label>Kategori Barang</label>
+      <select ([ngModel])="dataAdd.KdKategoriBarang" name="katBarang" (change)="onSelect($event.target.value)" class="form-control">
+        <option value="0">--Pilih Kategori Barang--</option>
+        <option *ngFor="let item of dataKategori" value={{item._id}}>{{item.NamaKategoriBarang}}</option>
+      </select>
   </div>
   <div class="form-group">
-    <label>Kode Merk Barang</label>
-    <input [(ngModel)]="dataAdd.KdMerkBarang" name="merkBarang" type="text" class="form-control">
+    <label>Merk Barang</label>
+    <select ([ngModel])="dataAdd.KdMerkBarang" name="merkBarang" (change)="onSelectMerk($event.target.value)" class="form-control">
+      <option value="0">--Pilih Merk Barang--</option>
+      <option *ngFor="let merk of dataMerk" value={{merk.KdMerkBarang}}>{{merk.NamaMerkBarang}}</option>
+    </select>
   </div>
   <div class="form-group">
     <label>Tipe Barang</label>
-    <input [(ngModel)]="dataAdd.TipeBarang" name="tipeBarang" type="text" class="form-control">
+    <input [(ngModel)]="dataAdd.TypeBarang" name="tipeBarang" type="text" class="form-control">
   </div>
   <div class="form-group">
     <label>Harga Barang</label>
@@ -38,7 +44,7 @@
     <input [(ngModel)]="dataAdd.StokAkhir" name="stokAkhir" type="number" class="form-control">
   </div>
   <div class="box-footer">
-      <button type="submit" class="btn btn-default" (click)="barangBack()">Cancel</button>
+      <button type="submit" class="btn btn-default" [routerLink]="['/barang']">Cancel</button>
       <button type="submit" class="btn btn-info pull-right">Add</button>       
   </div>        
 </form>
@@ -46,12 +52,3 @@
 <!-- /.box-body -->
 </div>
 </div>
-<script>
-$(function () {
-    //Initialize Select2 Elements
-  $(".select2").select2();
-  $('#datepicker').datepicker({
-      autoclose: true
-  });
-});
-</script>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'app-pembelian',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PembelianComponent implements OnInit {
 
-  constructor() { }
+  dataTampil: Object;
+  constructor(private http:Http) { }
 
   ngOnInit() {
+    this.http.get("http://localhost:8889/api/pembelian")
+    .subscribe((res:Response) => {
+      this.dataTampil=res.json();
+    })
   }
 
 }

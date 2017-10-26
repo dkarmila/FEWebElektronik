@@ -16,13 +16,16 @@
   </div>
   <div class="form-group">
       <label>Kode Kategori Barang</label>
-      <select [(ngModel)]="dataKategori.KdKategoriBarang" name="katBarang" type="text" class="form-control">
-        <option>--Pilih Kode Kategori Barang--</option>
+      <select name="katBarang" class="form-control" (change)="onSelect($event.target.value)">
+        <!-- <option value={{dataEdit.KdKategoriBarang}}>{{dataEdit.KdKategoriBarang}}</option> -->
+        <option *ngFor="let item of dataKategori" value={{item._id}}>{{item.KdKategoriBarang}}</option>
       </select>
   </div>
   <div class="form-group">
     <label>Kode Merk Barang</label>
-    <input [(ngModel)]="dataEdit.KdMerkBarang" name="merkBarang" type="text" class="form-control">
+    <select name="merkBarang" type="text" class="form-control">
+      <option *ngFor="let merk of dataMerk" value={{merk.KdKategoriBarang}}>{{merk.KdKategoriBarang}}</option>
+    </select>
   </div>
   <div class="form-group">
     <label>Tipe Barang</label>
@@ -41,7 +44,7 @@
     <input [(ngModel)]="dataEdit.StokAkhir" name="stokakhir" type="number" class="form-control">
   </div>
   <div class="box-footer">
-          <button type="submit" class="btn btn-default" (click)="barangBack()">Cancel</button>
+          <button type="submit" class="btn btn-default" [routerLink]="['/barang']">Cancel</button>
           <button type="submit" class="btn btn-info pull-right" (click)="putBarang(dataEdit._id)">Update</button>        
   </div>        
 </form>

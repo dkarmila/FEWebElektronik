@@ -22,7 +22,8 @@ export class BarangComponent implements OnInit {
 
   barangDelete(id){
     // this.http.delete("https://elektronik124.herokuapp.com/api/barang/"+id)
-    this.http.get("http://localhost:8889/api/barang"+id)
+    debugger;
+    this.http.delete("http://localhost:8889/api/barang/"+id)
     .subscribe((res:Response) => {
       window.location.href='./barang';
     })
