@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import * as $ from 'jquery';
+import 'datatables.net'
 
 @Component({
   selector: 'app-barang',
@@ -17,6 +19,9 @@ export class BarangComponent implements OnInit {
     this.http.get("http://localhost:8889/api/barang")
     .subscribe((res:Response) => {
       this.dataTampil = res.json();
+      $(document).ready(function(){
+        $("#example").DataTable();
+      });
     })
   }
 

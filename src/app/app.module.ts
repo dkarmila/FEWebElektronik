@@ -19,6 +19,12 @@ import { PembeliandetailComponent } from './pembeliandetail/pembeliandetail.comp
 import { PembelianrinciComponent } from './pembelian/pembelianrinci/pembelianrinci.component';
 import { PembelianeditComponent } from './pembelian/pembelianedit/pembelianedit.component';
 import { PembelianaddComponent } from './pembelian/pembelianadd/pembelianadd.component';
+import { KategoribarangrinciComponent } from './kategoribarang/kategoribarangrinci/kategoribarangrinci.component';
+import { KategoribarangeditComponent } from './kategoribarang/kategoribarangedit/kategoribarangedit.component';
+import { KategoribarangaddComponent } from './kategoribarang/kategoribarangadd/kategoribarangadd.component';
+import { PembeliandetailrinciComponent } from './pembeliandetail/pembeliandetailrinci/pembeliandetailrinci.component';
+import { PembeliandetaileditComponent } from './pembeliandetail/pembeliandetailedit/pembeliandetailedit.component';
+import { PembeliandetailaddComponent } from './pembeliandetail/pembeliandetailadd/pembeliandetailadd.component';
 
 let routes: Routes=[
   {path: 'barang', component: BarangComponent},
@@ -26,7 +32,11 @@ let routes: Routes=[
   {path: 'barang/edit/:id', component: BarangeditComponent},
   {path: 'barang/add', component:BarangaddComponent},
   {path: 'kategoribarang', component: KategoribarangComponent},
-  {path: 'pembelian', component: PembelianComponent}
+  {path: 'pembelian', component: PembelianComponent},
+  {path: 'pembelian/detail/:id', component: PembelianrinciComponent},
+  {path: 'pembelian/edit/:id', component: PembelianeditComponent},
+  {path: 'pembelian/add', component: PembelianaddComponent}
+
 ] 
 
 @NgModule({
@@ -44,7 +54,13 @@ let routes: Routes=[
     PembeliandetailComponent,
     PembelianrinciComponent,
     PembelianeditComponent,
-    PembelianaddComponent
+    PembelianaddComponent,
+    KategoribarangrinciComponent,
+    KategoribarangeditComponent,
+    KategoribarangaddComponent,
+    PembeliandetailrinciComponent,
+    PembeliandetaileditComponent,
+    PembeliandetailaddComponent
   ],
   imports: [
     BrowserModule,

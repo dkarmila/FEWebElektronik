@@ -10,7 +10,6 @@
       <div class="box-body">
           <div class="form-group">
           <label for="inputEmail3" class="col-sm-2 control-label">Kode Pembelian</label>
-
           <div class="col-sm-10">
               <input type="text" class="form-control" id="inputEmail3" value="{{dataDetail.KdPembelian}}" >
           </div>
@@ -53,7 +52,7 @@
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
-          <button class="btn btn-info" type="submit" (click)="barangBack()">Back</button>
+          <button class="btn btn-info" type="submit" [routerLink]="['/pembelian']">Back</button>
       </div>
       <!-- /.box-footer -->
       </form>

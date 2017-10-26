@@ -5,38 +5,43 @@
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">Barang Table</h3>
-    <div class="box-tools">
+    <!-- <div class="box-tools">
       <div class="input-group input-group-sm" style="width: 150px;">
         <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
         <div class="input-group-btn">
           <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <!-- /.box-header -->
-  <div class="box-body table-responsive no-padding">
-    <table class="table table-hover">
-      <tr>
-        <th>Kode Barang</th>
-        <th>Kode Kategori Barang</th>
-        <th>Kode Merk Barang</th>
-        <th>Tipe Barang</th>
-        <th>Aksi</th>
-        <!-- <th>Reason</th> -->
-      </tr>
-      <tr *ngFor="let item of dataTampil">
-        <td>{{item.KdBarang}}</td>
-        <td>{{item.KdKategoriBarang}}</td>
-        <td>{{item.KdMerkBarang}}</td>
-        <td>{{item.TypeBarang}}</td>
-        <td>
-          <a class="btn btn-success" [routerLink]="['./detail/'+item._id]"><span class="glyphicon glyphicon-search"></span></a>
-          <a class="btn btn-info" [routerLink]="['./edit/'+item._id]"><span class="glyphicon glyphicon-pencil"></span></a>
-          <button class="btn btn-danger" type="button" (click)="barangDelete(item._id)"><span class="glyphicon glyphicon-trash"></span></button>
-        </td>
-        <!-- <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td> -->
-      </tr>
+  <div class="box-body">
+    <table id="example" class="table table-hover" cellspacing="0" width="100%">
+      <thead>
+          <tr>
+              <th>Kode Barang</th>
+              <th>Kode Kategori Barang</th>
+              <th>Kode Merk Barang</th>
+              <th>Tipe Barang</th>
+              <th>Aksi</th>
+              <!-- <th>Reason</th> -->
+            </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of dataTampil">
+              <td>{{item.KdBarang}}</td>
+              <td>{{item.KdKategoriBarang}}</td>
+              <td>{{item.KdMerkBarang}}</td>
+              <td>{{item.TypeBarang}}</td>
+              <td>
+                <a class="btn btn-success" [routerLink]="['./detail/'+item._id]"><span class="glyphicon glyphicon-search"></span></a>
+                <a class="btn btn-info" [routerLink]="['./edit/'+item._id]"><span class="glyphicon glyphicon-pencil"></span></a>
+                <button class="btn btn-danger" type="button" (click)="barangDelete(item._id)"><span class="glyphicon glyphicon-trash"></span></button>
+              </td>
+              <!-- <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td> -->
+            </tr>
+      </tbody>
+      
     </table>
   </div>
 </div>

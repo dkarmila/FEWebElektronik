@@ -28,7 +28,4 @@ export class BarangdetailComponent implements OnInit {
     })
   }
 
-  barangBack(){
-    window.location.href='./barang';
-  }
 }
