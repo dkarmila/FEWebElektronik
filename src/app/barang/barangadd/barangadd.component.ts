@@ -33,6 +33,7 @@ export class BarangaddComponent implements OnInit {
       .subscribe((res:Response) => {
         this.dataMerk = res.json().MerkBarang;
         this.dataAdd.KdKategoriBarang = res.json().KdKategoriBarang;
+        this.dataAdd.GambarBarang = "gambar "+ res.json().NamaKategoriBarang;
         console.log(this.dataMerk);
       })
     }else{

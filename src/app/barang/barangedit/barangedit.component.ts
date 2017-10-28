@@ -24,6 +24,7 @@ export class BarangeditComponent implements OnInit {
     this.http.get("http://localhost:8889/api/barang/"+this.id)
     .subscribe((res:Response) => {
       this.dataEdit = res.json();
+      debugger;
     })
     this.http.get("http://localhost:8889/api/kategoribarang")
     .subscribe((res:Response) => {
@@ -42,7 +43,8 @@ export class BarangeditComponent implements OnInit {
     debugger;
     this.http.get("http://localhost:8889/api/kategoribarang/"+kategoriid)
     .subscribe((res:Response) => {
-      this.dataMerk = res.json();
+      this.dataMerk = res.json().MerkBarang;
+      console.log(this.dataMerk);
       debugger;
     })  
     //this.dataMerk = this._countryService.getStates().filter((item) => item.KdKategoriBarang == kategoriid);  

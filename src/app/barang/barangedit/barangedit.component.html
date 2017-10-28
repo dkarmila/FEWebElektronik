@@ -8,7 +8,7 @@
 </div>
 <!-- /.box-header -->
 <div class="box-body">
-  <form role="form">
+  <form role="form" *ngIf="dataEdit">
   <!-- text input -->
   <div class="form-group">
       <label>Kode Barang</label>
@@ -16,15 +16,17 @@
   </div>
   <div class="form-group">
       <label>Kode Kategori Barang</label>
-      <select name="katBarang" class="form-control" (change)="onSelect($event.target.value)">
+      <select ([ngModel])="dataEdit.KdKategoriBarang" name="katBarang" class="form-control" (change)="onSelect($event.target.value)">
         <!-- <option value={{dataEdit.KdKategoriBarang}}>{{dataEdit.KdKategoriBarang}}</option> -->
-        <option *ngFor="let item of dataKategori" value={{item._id}}>{{item.KdKategoriBarang}}</option>
+        <option value={{0}} selected="selected">--Pilih Kategori Barang--</option>
+        <option *ngFor="let item of dataKategori" value={{item._id}}>{{item.NamaKategoriBarang}}</option>
       </select>
   </div>
   <div class="form-group">
     <label>Kode Merk Barang</label>
-    <select name="merkBarang" type="text" class="form-control">
-      <option *ngFor="let merk of dataMerk" value={{merk.KdKategoriBarang}}>{{merk.KdKategoriBarang}}</option>
+    <select ([ngModel])="dataEdit.KdMerkBarang" name="merkBarang" class="form-control">
+      <option value={{0}}>--Pilih Merk Barang--</option>
+      <option *ngFor="let merk of dataMerk" value={{merk.KdMerkBarang}}>{{merk.NamaMerkBarang}}</option>
     </select>
   </div>
   <div class="form-group">
@@ -43,6 +45,14 @@
     <label>Stok Barang Akhir</label>
     <input [(ngModel)]="dataEdit.StokAkhir" name="stokakhir" type="number" class="form-control">
   </div>
+  <div class="form-group">
+    <label>Foto Barang</label>
+    <input [(ngModel)]="dataEdit.GambarBarang" name="foto" type="file" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Deskripsi Barang</label>
+      <input [(ngModel)]="dataEdit.KetBarang" name="deskBarang" type="text" class="form-control">
+    </div>
   <div class="box-footer">
           <button type="submit" class="btn btn-default" [routerLink]="['/barang']">Cancel</button>
           <button type="submit" class="btn btn-info pull-right" (click)="putBarang(dataEdit._id)">Update</button>        

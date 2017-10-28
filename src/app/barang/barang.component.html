@@ -35,7 +35,8 @@
               <td>{{item.TypeBarang}}</td>
               <td>
                 <a class="btn btn-success" [routerLink]="['./detail/'+item._id]"><span class="glyphicon glyphicon-search"></span></a>
-                <a class="btn btn-info" [routerLink]="['./edit/'+item._id]"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!-- <a class="btn btn-info" [routerLink]="['./edit/'+item._id]"><span class="glyphicon glyphicon-pencil"></span></a> -->
+                <a class="btn btn-info" (click)="barangmodal(item._id)" data-keyboard="false" data-backdrop="static" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-pencil"></span></a>
                 <button class="btn btn-danger" type="button" (click)="barangDelete(item._id)"><span class="glyphicon glyphicon-trash"></span></button>
               </td>
               <!-- <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td> -->
@@ -47,3 +48,67 @@
 </div>
 </div>
 </div>
+
+<!--Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Update Barang</h4>
+        </div>
+        <div class="modal-body">
+            <form role="form" *ngIf="dataEdit">
+                
+                <div class="form-group">
+                    <label>Kode Barang</label>
+                    <input [(ngModel)]="dataEdit.KdBarang" name="kodeBarang" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Kode Kategori Barang</label>
+                    <select ([ngModel])="dataEdit.KdKategoriBarang" name="katBarang" class="form-control" (change)="onSelect($event.target.value)">
+                      
+                      <option value={{0}}>--Pilih Kategori Barang--</option>
+                      <option *ngFor="let item of dataKategori" value={{item.KdKategoriBarang}}>{{item.NamaKategoriBarang}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label>Kode Merk Barang</label>
+                  <select ([ngModel])="dataEdit.KdMerkBarang" name="merkBarang" class="form-control">
+                    <option value={{0}}>--Pilih Merk Barang--</option>
+                    <option *ngFor="let merk of dataMerk" value={{merk.KdMerkBarang}}>{{merk.NamaMerkBarang}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Tipe Barang</label>
+                  <input [(ngModel)]="dataEdit.TypeBarang" name="tipebarang" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Harga Barang</label>
+                  <input [(ngModel)]="dataEdit.HargaBarang" name="hargabarang" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Stok Barang Awal</label>
+                  <input [(ngModel)]="dataEdit.StokAwal" name="stokawal" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Stok Barang Akhir</label>
+                  <input [(ngModel)]="dataEdit.StokAkhir" name="stokakhir" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Foto Barang</label>
+                  <input [(ngModel)]="dataEdit.GambarBarang" name="foto" type="file" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi Barang</label>
+                    <input [(ngModel)]="dataEdit.KetBarang" name="deskBarang" type="text" class="form-control">
+                  </div>       
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-info pull-right" (click)="putBarang(dataEdit._id)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

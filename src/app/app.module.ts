@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //add
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -25,13 +25,18 @@ import { KategoribarangaddComponent } from './kategoribarang/kategoribarangadd/k
 import { PembeliandetailrinciComponent } from './pembeliandetail/pembeliandetailrinci/pembeliandetailrinci.component';
 import { PembeliandetaileditComponent } from './pembeliandetail/pembeliandetailedit/pembeliandetailedit.component';
 import { PembeliandetailaddComponent } from './pembeliandetail/pembeliandetailadd/pembeliandetailadd.component';
+import { HomeComponent } from './home/home.component';
 
 let routes: Routes=[
+  {path: '', component: HomeComponent},
   {path: 'barang', component: BarangComponent},
   {path: 'barang/detail/:id', component: BarangdetailComponent},
   {path: 'barang/edit/:id', component: BarangeditComponent},
   {path: 'barang/add', component:BarangaddComponent},
   {path: 'kategoribarang', component: KategoribarangComponent},
+  {path: 'kategoribarang/detail/:id', component: KategoribarangrinciComponent},
+  {path: 'kategoribarang/edit/:id', component: KategoribarangeditComponent},
+  {path: 'kategoribarang/add', component:KategoribarangaddComponent},
   {path: 'pembelian', component: PembelianComponent},
   {path: 'pembelian/detail/:id', component: PembelianrinciComponent},
   {path: 'pembelian/edit/:id', component: PembelianeditComponent},
@@ -60,12 +65,14 @@ let routes: Routes=[
     KategoribarangaddComponent,
     PembeliandetailrinciComponent,
     PembeliandetaileditComponent,
-    PembeliandetailaddComponent
+    PembeliandetailaddComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [],
