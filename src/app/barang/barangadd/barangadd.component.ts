@@ -20,8 +20,7 @@ export class BarangaddComponent implements OnInit {
   postBarang(dataAdd){
     let header = new Headers({"Content-Type":"application/json"});
     let opsi = new RequestOptions({headers:header});
-    // this.http.post("https://elektronik124.herokuapp.com/api/barang", JSON.stringify(dataAdd), opsi)
-    this.http.post("http://localhost:8889/api/barang", JSON.stringify(dataAdd), opsi)
+    this.http.post("https://elektronik124.herokuapp.com/api/barang", JSON.stringify(dataAdd), opsi)
     .subscribe((res:Response) => {
       window.location.href='./barang';
     })
