@@ -34,9 +34,9 @@ export class PetugaseditComponent implements OnInit {
     } else if(this.dataEdit['NoRmh']==null && this.dataEdit['NoTelp']==null){
       debugger;
       alert("No telp / No rumah salah satu harus terisi Pakk");
-    }else if(this.dataEdit['NoTelp'] > 9999999999999){
+    }else if(this.dataEdit['NoTelp'] > '9999999999999'){
       alert("No Telp Tidak Boleh Lebih Dari 13 Pakk");
-    }else if(this.dataEdit['NoRmh'] > 99999999999){
+    }else if(this.dataEdit['NoRmh'] > '99999999999'){
       alert("No Rumah Melebihi Batas");
     } else {
       this.http.put("https://elektronik124.herokuapp.com/api/petugas/"+this.id, this.dataEdit)

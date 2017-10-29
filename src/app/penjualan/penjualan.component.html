@@ -1,0 +1,49 @@
+<section class="content-header">
+    
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active"> Data Penjualan</li>
+    </ol>
+  </section>
+  <div class="row">
+  <div class="col-xs-12">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Penjualan Table</h3>
+      <div class="box-tools">
+        <form action="">
+          <div class="input-group input-group-sm" style="width: 150px;">
+            <input type="text" name="table_search" class="form-control pull-right" autofocus="autofocus" placeholder="Search">
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <tr>
+          <th>Kode Penjualan</th>
+          <th>Nama Pelanggan</th>
+          <th>Nama Petugas</th>
+          <th>Tgl Penjualan</th>
+          <th>Jumlah Item</th>
+          <th>Total Harga Jual</th>
+          <th>Aksi</th>
+        </tr>
+        <tr *ngFor="let item of dataTampil">
+          <td>{{item.KdPenjualan}}</td>
+          <td>{{item.pelangganInfo[0].NamaPelanggan}}</td>
+          <td>{{item.petugasInfo[0].NamaPetugas}}</td>
+          <td>{{item.TglPenjualan}}</td>
+          <td>{{item.JmlItem}}</td>
+          <td>{{item.TotalHargaJual}}</td>
+          <td>
+            <a class="btn btn-success" [routerLink]="['./detail/'+item._id]"><span class="glyphicon glyphicon-search"></span></a>
+            <button class="btn btn-danger" type="button" (click)="hapusPetugas(item._id)"><span class="glyphicon glyphicon-trash"></span></button>
+          </td>
+        </tr>
+      </table>
+    </div></div></div>
+  </div>

@@ -6,8 +6,8 @@ export class PelangganModel {
     public KdPelanggan: string;
     public NamaPelanggan: string;
     public AlamatPelanggan: string;
-    public NoTelp:number;
-    public NoRmh:number;
+    public NoTelp:string;
+    public NoRmh:string;
     public UsernamePelanggan: string;
     public PasswordPelanggan: string;
 }

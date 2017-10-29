@@ -6,8 +6,8 @@ export class PetugasModel {
     public KdPetugas: string;
     public NamaPetugas: string;
     public AlamatPetugas: string;
-    public NoTelp:number;
-    public NoRmh:number;
+    public NoTelp:string;
+    public NoRmh:string;
     public UsernamePetugas: string;
     public PasswordPetugas: string;
 }
