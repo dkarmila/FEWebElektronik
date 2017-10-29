@@ -34,14 +34,24 @@ export class PelangganeditComponent implements OnInit {
     } else if(this.dataEdit['NoRmh']==null && this.dataEdit['NoTelp']==null){
       debugger;
       alert("No telp / No rumah salah satu harus terisi Pakk");
+<<<<<<< HEAD
     }else if(this.dataEdit['NoTelp'] > 9999999999999){
       alert("No Telp Tidak Boleh Lebih Dari 13 Pakk");
     }else if(this.dataEdit['NoRmh'] > 99999999999){
+=======
+    }else if(this.dataEdit['NoTelp'] > '9999999999999'){
+      alert("No Telp Tidak Boleh Lebih Dari 13 Pakk");
+    }else if(this.dataEdit['NoRmh'] > '99999999999'){
+>>>>>>> 21965c8af443192ae54bf6d1776a4808c9201bc8
       alert("No Rumah Melebihi Batas");
     } else {
       this.http.put("https://elektronik124.herokuapp.com/api/Pelanggan/"+this.id, this.dataEdit)
       .subscribe((res:Response) => {
+<<<<<<< HEAD
         window.location.href='./Pelanggan';
+=======
+        window.location.href='./pelanggan';
+>>>>>>> 21965c8af443192ae54bf6d1776a4808c9201bc8
         alert("Berhasil di Edit");
       })
     }
