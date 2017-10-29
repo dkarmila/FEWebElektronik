@@ -24,9 +24,8 @@ export class BarangComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.http.get("https://elektronik124.herokuapp.com/api/barang")
-    this.http.get("http://localhost:8889/api/barang")
-    .subscribe((res:Response) => {
+    this.http.get("https://elektronik124.herokuapp.com/api/barang")
+        .subscribe((res:Response) => {
       this.dataTampil = res.json();
       $(document).ready(function(){
         $("#example").DataTable();
@@ -90,9 +89,13 @@ export class BarangComponent implements OnInit {
   // }
 
   barangDelete(id){
+<<<<<<< HEAD
     // this.http.delete("https://elektronik124.herokuapp.com/api/barang/"+id)
     debugger;
     this.http.delete("http://localhost:8889/api/barang/"+id)
+=======
+    this.http.delete("https://elektronik124.herokuapp.com/api/barang/"+id)
+>>>>>>> 9e3c48050ea2213b23e447493c28cad2a24deab8
     .subscribe((res:Response) => {
       window.location.href='./barang';
     })

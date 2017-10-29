@@ -3,11 +3,11 @@ import { Http, Response } from '@angular/http';
 import { Routes, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-barangdetail',
-  templateUrl: './barangdetail.component.html',
-  styleUrls: ['./barangdetail.component.css']
+  selector: 'app-Petugasdetail',
+  templateUrl: './petugasdetail.component.html',
+  styleUrls: ['./petugasdetail.component.css']
 })
-export class BarangdetailComponent implements OnInit {
+export class PetugasdetailComponent implements OnInit {
 
   dataDetail: Object;
   id: string;
@@ -19,11 +19,14 @@ export class BarangdetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get("https://elektronik124.herokuapp.com/api/barang/"+this.id)
+    this.http.get("https://elektronik124.herokuapp.com/api/petugas/"+this.id)
     .subscribe((res:Response) => {
       debugger;
       this.dataDetail=res.json();
     })
   }
 
+  barangBack(){
+    window.location.href='./barang';
+  }
 }

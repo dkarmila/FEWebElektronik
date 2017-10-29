@@ -20,8 +20,8 @@ export class BarangeditComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.http.get("https://elektronik124.herokuapp.com/api/barang/"+this.id)
-    this.http.get("http://localhost:8889/api/barang/"+this.id)
+    this.http.get("https://elektronik124.herokuapp.com/api/barang/"+this.id)
+    // this.http.get("http://localhost:8889/api/barang/"+this.id)
     .subscribe((res:Response) => {
       this.dataEdit = res.json();
       debugger;

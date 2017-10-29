@@ -1,0 +1,55 @@
+<section class="content-header">
+    <h1><span class="glyphicon glyphicon-briefcase"></span>
+      Detail Petugas
+    </h1>
+    <ol class="breadcrumb">
+      <li><a [routerLink]="['/']"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a [routerLink]="['/petugas']"> Data Petugas</a></li>
+      <li class="active"> Detail Petugas</li>
+    </ol>
+  </section>
+  <form>
+<div class="box box-default">
+      <div class="box-header with-border">
+    <a class="btn" [routerLink]="['/petugas']"><span class="glyphicon glyphicon-arrow-left"></span>  Back</a>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Kode Petugas</label>
+                <input value="{{dataDetail.KdPetugas}}" type="text" name="KdPetugas" placeholder="Kode Petugas" class="form-control select2" style="width: 100%;" >
+            </div>
+            <div class="form-group">
+              <label>Nama Petugas</label>
+              <input value="{{dataDetail.NamaPetugas}}" type="text" name="NamaPetugas" placeholder="Nama Petugas" class="form-control select2" style="width: 100%;" required />
+            </div>
+            <div class="form-group">
+              <label>Alamat Petugas</label>
+              <textarea value="{{dataDetail.AlamatPetugas}}" type="text" name="AlamatPetugas" placeholder="Alamat Petugas" class="form-control select2" style="width: 100%;" required></textarea>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>No Telp</label>
+              <input value="{{dataDetail.NoTelp}}" type="number" name="NoTelp" placeholder="No Telp" class="form-control select2" style="width: 100%;" required />
+            </div>
+            <div class="form-group">
+              <label>No Rumah</label>
+              <input value="{{dataDetail.NoRmh}}" type="number" name="NoRmh" placeholder="No Rumah" class="form-control select2" style="width: 100%;" required />
+            </div>
+            <div class="form-group">
+              <label>Username Petugas</label>
+              <input value="{{dataDetail.UsernamePetugas}}" type="text" name="UsernamePetugas" placeholder="Username Petugas" class="form-control select2" style="width: 100%;" required />
+            </div>
+            <div class="form-group">
+        <label>Password Petugas</label>
+        <input value="{{dataDetail.PasswordPetugas}}" type="password" name="PasswordPetugas" placeholder="Password Petugas" class="form-control select2" style="width: 100%;" required />
+      </div>  
+          </div>
+        </div>
+    </div>
+  </div>
+  </form>

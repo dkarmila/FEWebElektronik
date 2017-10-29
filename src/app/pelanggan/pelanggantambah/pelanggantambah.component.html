@@ -1,0 +1,58 @@
+<section class="content-header">
+  <h1><span class="glyphicon glyphicon-briefcase"></span>
+    Input Pelanggan
+  </h1>
+  <ol class="breadcrumb">
+    <li><a [routerLink]="['/']"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a [routerLink]="['/pelanggan']"> Data Pelanggan</a></li>
+    <li class="active"> Input Pelanggan</li>
+  </ol>
+</section>
+<form  (ngSubmit) = "postPelanggan(dataTambah)">
+<div class="box box-default">
+    <div class="box-header with-border">
+  <a class="btn" [routerLink]="['/pelanggan']"><span class="glyphicon glyphicon-arrow-left"></span>  Back</a>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Kode Pelanggan</label>
+              <input ngRequired [(ngModel)]="dataTambah.KdPelanggan" type="text" name="KdPelanggan" placeholder="Kode Pelanggan" class="form-control select2" style="width: 100%;" >
+          </div>
+          <div class="form-group">
+            <label>Nama Pelanggan</label>
+            <input [(ngModel)]="dataTambah.NamaPelanggan" type="text" name="NamaPelanggan" placeholder="Nama Pelanggan" class="form-control select2" style="width: 100%;" required />
+          </div>
+          <div class="form-group">
+            <label>Alamat Pelanggan</label>
+            <textarea [(ngModel)]="dataTambah.AlamatPelanggan" type="text" name="AlamatPelanggan" placeholder="Alamat Pelanggan" class="form-control select2" style="width: 100%;" required></textarea>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+        <div class="form-group">
+          <label>No Telp</label>
+          <input [(ngModel)]="dataTambah.NoTelp" type="number" name="NoTelp" placeholder="No Telp" class="form-control select2" style="width: 100%;" required />
+        </div>
+        <div class="form-group">
+          <label>No Rumah</label>
+          <input [(ngModel)]="dataTambah.NoRmh" type="number" name="NoRmh" placeholder="No Rumah" class="form-control select2" style="width: 100%;" required />
+        </div>
+        <div class="form-group">
+          <label>Username Pelanggan</label>
+          <input [(ngModel)]="dataTambah.UsernamePelanggan" type="text" name="UsernamePelanggan" placeholder="Username Pelanggan" class="form-control select2" style="width: 100%;" required />
+        </div>
+        <div class="form-group">
+          <label>Password Pelanggan</label>
+          <input [(ngModel)]="dataTambah.PasswordPelanggan" type="password" name="PasswordPelanggan" placeholder="Password Pelanggan" class="form-control select2" style="width: 100%;" required />
+        </div>  
+        </div>
+      </div>
+    </div>
+<div class="box-footer">
+      <button class="btn btn-success" type="submit" style="float:right">Simpan</button>
+    </div>
+  </div>
+</form>
