@@ -12,6 +12,7 @@ export class BarangeditComponent implements OnInit {
   dataEdit: Object;
   dataKategori: Object;
   id: string;
+  dataMerk: Object;
   constructor(private http: Http, private route: ActivatedRoute) {
     this.route.params.subscribe(params =>{
       this.id=params['id'];
@@ -23,6 +24,7 @@ export class BarangeditComponent implements OnInit {
     // this.http.get("http://localhost:8889/api/barang/"+this.id)
     .subscribe((res:Response) => {
       this.dataEdit = res.json();
+      debugger;
     })
     this.http.get("http://localhost:8889/api/kategoribarang")
     .subscribe((res:Response) => {
@@ -37,5 +39,16 @@ export class BarangeditComponent implements OnInit {
       window.location.href='./barang';
     })
   }
+  onSelect(kategoriid) {
+    debugger;
+    this.http.get("http://localhost:8889/api/kategoribarang/"+kategoriid)
+    .subscribe((res:Response) => {
+      this.dataMerk = res.json().MerkBarang;
+      console.log(this.dataMerk);
+      debugger;
+    })  
+    //this.dataMerk = this._countryService.getStates().filter((item) => item.KdKategoriBarang == kategoriid);  
+  } 
+  
 
 }

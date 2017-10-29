@@ -10,50 +10,49 @@
       <div class="box-body">
           <div class="form-group">
           <label for="inputEmail3" class="col-sm-2 control-label">Kode Pembelian</label>
-
           <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputEmail3" value="{{dataDetail.KdPembelian}}" >
+              <input type="text" class="form-control" id="inputEmail3" value="{{dataDetail.KdPembelian}}" disabled>
           </div>
           </div>
           <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Kode Petugas</label>
 
           <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.KdPetugas}}">
+              <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.KdPetugas}}" disabled>
           </div>
           </div>
           <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">Tanggal Pembelian</label>
           
           <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.TglPembelian}}">
+              <input type="date" class="form-control" id="inputPassword3" value="{{dataDetail.TglPembelian | date:'yyyy-MM-dd'}}" disabled>
           </div>
           </div>
           <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">Jumlah Item</label>
             
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.JmlItem}}">
+                <input type="text" class="form-control" id="inputPassword3" value="{{dataDetail.JmlItem}}" disabled>
             </div>
             </div>
             <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">Total Harga Beli</label>
             
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputPassword3" value="{{dataDetail.TotalHargaBeli}}">
+                <input type="number" class="form-control" id="inputPassword3" value="{{dataDetail.TotalHargaBeli}}" disabled>
             </div>
             </div>
             <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">Status Pembayaran</label>
             
             <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputPassword3" value="{{dataDetail.StatusPembayaran}}">
+                <input type="number" class="form-control" id="inputPassword3" value="{{dataDetail.StatusPembayaran}}" disabled>
             </div>
             </div>
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
-          <button class="btn btn-info" type="submit" (click)="barangBack()">Back</button>
+          <button class="btn btn-info" type="submit" [routerLink]="['/pembelian']">Back</button>
       </div>
       <!-- /.box-footer -->
       </form>

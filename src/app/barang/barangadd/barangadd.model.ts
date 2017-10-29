@@ -10,4 +10,6 @@ export class BarangModel {
     public StokAwal: number;
     public StokAkhir: number;
     public HargaBarang: number;
+    public GambarBarang: string;
+    public KetBarang: string;
 }

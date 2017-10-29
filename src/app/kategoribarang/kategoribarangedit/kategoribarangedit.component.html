@@ -1,0 +1,56 @@
+
+<!-- /.box -->
+<!-- general form elements disabled -->
+<div class="col-xs-11">
+  <div class="box box-info">
+<div class="box-header with-border">
+  <h3 class="box-title">Update Kategori Barang</h3>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <form role="form" *ngIf="dataEdit">
+  <!-- text input -->
+  <div class="form-group">
+      <label>Kode Kategori Barang</label>
+      <input [(ngModel)]="dataEdit.KdKategoriBarang" name="kdKatBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Nama Kategori Barang</label>
+      <input [(ngModel)]="dataEdit.NamaKategoriBarang" name="namaKatBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">Merk Barang</label>
+    </div>
+    <div>
+      <table class="table table-hover" cellspacing="0" width="100%" >
+          <thead>
+              <tr>
+              <th>Kode Merk Barang</th>
+              <th>Nama Merk Barang</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of dataEdit.MerkBarang; let i=index">
+              <td><input [(ngModel)]="dataEdit.MerkBarang[i].KdMerkBarang" name="kdMerkBarang" type="text" class="form-control"></td>
+              <td><input [(ngModel)]="dataEdit.MerkBarang[i].NamaMerkBarang" name="namaMerk" type="text" class="form-control"></td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  <!-- <div class="form-group">
+    <label>Kode Merk Barang</label>
+    <input [(ngModel)]="dataEdit.KdMerkBarang" name="kdMerkBarang" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Nama Merk Barang</label>
+    <input [(ngModel)]="dataEdit.NamaMerkBarang" name="namaMerk" type="text" class="form-control">
+  </div> -->
+  <div class="box-footer">
+          <button type="submit" class="btn btn-default" [routerLink]="['/kategoribarang']">Cancel</button>
+          <button type="submit" class="btn btn-info pull-right" (click)="putKatBarang(dataEdit._id)">Update</button>        
+  </div>        
+</form>
+</div>
+<!-- /.box-body -->
+</div>
+</div>
